@@ -9,7 +9,6 @@ npm install react-native-otp-custom-library
 ```
 ![Alt text](docs/dummy1.png)
 ![Alt text](docs/dummy2.png)
-![Alt text](docs/demmo.mp4)
 ## Usage
 
 ```js
@@ -17,8 +16,17 @@ import { OtpCustomLibraryView } from "react-native-otp-custom-library";
 
 // ...
 
-<OtpCustomLibraryView color="tomato" />
+<OtpCustomLibraryView filledColor="red" />
 ```
+| Props | Description |
+| --- | --- |
+| filledColor  | For Show Filled fields color  |
+| nonFilledColor | For show not Filled fields color |
+| currentFieldColor | For show current index border color |
+| totalField |Total Fields |
+| onChange | onChange = (val) =>{set your state = val} |
+| style | styling for main Otp field container  |
+| textInputStyle | styling for main Otp input field container |
 
 ## Contributing
 
