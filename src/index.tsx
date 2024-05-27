@@ -61,7 +61,7 @@ const OtpInput: React.FC<Props> = ({
     };
   };
   const removeTextHandler = (index: any) => {
-    const newOtp = [...forgotPasswordOtp];
+    let newOtp = [...forgotPasswordOtp];
     if (index === 0) {
       newOtp[index] = '';
       SetForgotPasswordOtp(newOtp);
@@ -71,7 +71,7 @@ const OtpInput: React.FC<Props> = ({
       SetForgotPasswordOtp(newOtp);
       SetFocusInput(totalField - 1);
     } else {
-      const newOtp = [...forgotPasswordOtp];
+      newOtp = [...forgotPasswordOtp];
       newOtp[index - 1] = '';
       SetForgotPasswordOtp(newOtp);
       const prevInput = index - 1;

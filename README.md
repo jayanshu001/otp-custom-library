@@ -7,7 +7,9 @@ Custome Otp Feild Use In React Native
 ```sh
 npm install react-native-otp-custom-library
 ```
-
+![Alt text](docs/dummy1.png)
+![Alt text](docs/dummy2.png)
+![Alt text](docs/demmo.mp4)
 ## Usage
 
 ```js
