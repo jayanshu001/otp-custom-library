@@ -1,12 +1,24 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
-import { OtpCustomLibraryView } from 'react-native-otp-custom-library';
+import { StyleSheet, View} from 'react-native';
+import OtpInput  from 'react-native-otp-custom-library';
 
 export default function App() {
+  const onChange = (val:any) =>{
+    //set your state here
+    console.log(val)
+  }
   return (
     <View style={styles.container}>
-      <OtpCustomLibraryView color="#32a852" style={styles.box} />
+      <OtpInput 
+        filledColor = {'#21C274'}
+        nonFilledColor={'#DCDCDC'}
+        currentFieldColor = {'#8735E1'}
+        totalField = {6}
+        onChange ={onChange}
+        style={styles.mainOtpContainer}
+        textInputStyle={styles.box}
+      />
     </View>
   );
 }
@@ -18,8 +30,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    width: 50,
+    height: 50,
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#18181E',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    top: 0,
+    borderRadius: 8,
+    marginLeft: 10,
+    paddingTop: 0,
+    paddingBottom: 0
   },
+  mainOtpContainer:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  }
 });
