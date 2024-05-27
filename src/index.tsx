@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  StyleSheet,
-  type ViewStyle,
-  View,
-  TextInput,
-} from 'react-native';
+import { type ViewStyle, View, TextInput } from 'react-native';
 
 interface Props {
   filledColor: string;
@@ -44,7 +39,7 @@ const OtpInput: React.FC<Props> = ({
 
   useEffect(() => {
     onChange(forgotPasswordOtp.join(''));
-  }, [forgotPasswordOtp, focusedInput]);
+  }, [forgotPasswordOtp, onChange]);
   let EventHandlerOtpScreen = (index: number) => {
     return {
       onChangeText: (text: any) => handleChangeText(text, index),
@@ -54,7 +49,7 @@ const OtpInput: React.FC<Props> = ({
         }
       },
       ref: (input: any) => {
-        if (index == focusedInput && input) {
+        if (index === focusedInput && input) {
           input.focus();
         }
       },
@@ -117,7 +112,5 @@ const OtpInput: React.FC<Props> = ({
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default OtpInput;
