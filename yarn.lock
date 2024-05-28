@@ -2721,7 +2721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native-community/cli-platform-ios@npm:13.6.6":
+"@react-native-community/cli-platform-ios@npm:13.6.6, @react-native-community/cli-platform-ios@npm:^13.6.6":
   version: 13.6.6
   resolution: "@react-native-community/cli-platform-ios@npm:13.6.6"
   dependencies:
@@ -11050,6 +11050,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
     "@babel/runtime": ^7.20.0
+    "@react-native-community/cli-platform-ios": ^13.6.6
     "@react-native/babel-preset": 0.74.83
     "@react-native/metro-config": 0.74.83
     "@react-native/typescript-config": 0.74.83
