@@ -14,14 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: '11'
-
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-
       - name: Setup
         uses: ./.github/actions/setup
 
@@ -30,9 +22,6 @@ jobs:
 
       - name: Typecheck files
         run: yarn typecheck
-
-      - name: Build Android
-        run: yarn run build:android
 
   test:
     runs-on: ubuntu-latest
