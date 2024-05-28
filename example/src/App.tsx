@@ -1,21 +1,20 @@
 import * as React from 'react';
-
-import { StyleSheet, View} from 'react-native';
-import OtpInput  from 'react-native-otp-custom-library';
+import { StyleSheet, View } from 'react-native';
+import OtpInput from 'react-native-otp-custom-library';
 
 export default function App() {
-  const onChange = (val:any) =>{
-    //set your state here
-    console.log(val)
-  }
+  const onChange = (val: any) => {
+    // set your state here
+    console.log(val);
+  };
   return (
     <View style={styles.container}>
-      <OtpInput 
-        filledColor = {'#21C274'}
-        nonFilledColor={'#DCDCDC'}
-        currentFieldColor = {'#8735E1'}
-        totalField = {6}
-        onChange ={onChange}
+      <OtpInput
+        filledColor="#21C274"
+        nonFilledColor="#DCDCDC"
+        currentFieldColor="#8735E1"
+        totalField={6}
+        onChange={onChange}
         style={styles.mainOtpContainer}
         textInputStyle={styles.box}
       />
@@ -42,11 +41,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginLeft: 10,
     paddingTop: 0,
-    paddingBottom: 0
+    paddingBottom: 0,
   },
-  mainOtpContainer:{
+  mainOtpContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-  }
+  },
 });
