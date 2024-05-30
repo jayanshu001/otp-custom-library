@@ -20,13 +20,13 @@ import { OtpCustomLibraryView } from "react-native-otp-custom-library";
 ```
 | Props | Description |
 | --- | --- |
-| filledColor  | For Show Filled fields color  |
-| nonFilledColor | For show not Filled fields color |
-| currentFieldColor | For show current index border color |
-| totalField |Total Fields |
-| onChange | onChange = (val) =>{set your state = val} |
-| style | styling for main Otp field container  |
-| textInputStyle | styling for main Otp input field container |
+| filledColor  | Border color for filled fields  |
+| nonFilledColor |Border color for non filled fields |
+| currentFieldColor | Border color for the current index border |
+| totalField | Total number of fields |
+| onChange | Callback for value change, e.g., onChange = (val) => { setYourState(val) } |
+| style | Style for the main OTP field container  |
+| textInputStyle | Style for the OTP input fields |
 
 ## Contributing
 
