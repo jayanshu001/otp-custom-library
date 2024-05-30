@@ -1,6 +1,6 @@
 # react-native-otp-custom-library
 
-Custome Otp Feild Use In React Native
+Custom OTP Field for use in React Native.
 
 ## Installation
 
