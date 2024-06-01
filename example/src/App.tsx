@@ -13,10 +13,8 @@ export default function App() {
         filledColor="#21C274"
         nonFilledColor="#DCDCDC"
         currentFieldColor="#8735E1"
-        totalField={6}
+        totalField={4}
         onChange={onChange}
-        style={styles.mainOtpContainer}
-        textInputStyle={styles.box}
       />
     </View>
   );

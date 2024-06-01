@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { type ViewStyle, View, TextInput } from 'react-native';
+import { type ViewStyle, View, TextInput , type TextStyle } from 'react-native';
 
 interface Props {
   filledColor: string;
@@ -11,8 +11,8 @@ interface Props {
   onChange: any;
   onClear?: any;
   value?: any;
-  style: ViewStyle;
-  textInputStyle?: ViewStyle;
+  style?: ViewStyle;
+  textInputStyle?: any;
 }
 
 const OtpInput: React.FC<Props> = ({
@@ -25,8 +25,23 @@ const OtpInput: React.FC<Props> = ({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    flexWrap:'wrap'
   },
-  textInputStyle = {},
+  textInputStyle = {
+    width: 50,
+    height: 50,
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#18181E',
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderStyle: 'solid',
+    top: 0,
+    borderRadius: 8,
+    marginLeft: 10,
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
 }) => {
   const repeat = (num: number) => {
     return Array(num).fill('');
@@ -58,19 +73,29 @@ const OtpInput: React.FC<Props> = ({
   const removeTextHandler = (index: any) => {
     let newOtp = [...forgotPasswordOtp];
     if (index === 0) {
+      console.log('1>>>>>>>>>>>>>>>>')
       newOtp[index] = '';
       SetForgotPasswordOtp(newOtp);
       SetFocusInput(0);
     } else if (index >= totalField - 1 && newOtp[totalField - 1] !== '') {
+      console.log('2?>>>>>>>>>>>>>>>>>.')
       newOtp[index] = '';
       SetForgotPasswordOtp(newOtp);
       SetFocusInput(totalField - 1);
     } else {
-      newOtp = [...forgotPasswordOtp];
-      newOtp[index - 1] = '';
-      SetForgotPasswordOtp(newOtp);
-      const prevInput = index - 1;
-      SetFocusInput(prevInput);
+      if(!newOtp[index].length){
+        newOtp = [...forgotPasswordOtp];
+        newOtp[index - 1] = '';
+        SetForgotPasswordOtp(newOtp);
+        const prevInput = index - 1;
+        SetFocusInput(prevInput);
+      }else{
+        newOtp = [...forgotPasswordOtp];
+        newOtp[index] = '';
+        SetForgotPasswordOtp(newOtp);
+        const prevInput = index;
+        SetFocusInput(prevInput);
+      }
     }
   };
   const handleChangeText = (text: any, index: any) => {
