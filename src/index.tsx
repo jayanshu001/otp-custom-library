@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { type ViewStyle, View, TextInput , type TextStyle } from 'react-native';
+import { type ViewStyle, View, TextInput } from 'react-native';
 
 interface Props {
   filledColor: string;

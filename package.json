@@ -1,6 +1,6 @@
 {
   "name": "react-native-otp-custom-library",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Custome Otp Feild Use In React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
