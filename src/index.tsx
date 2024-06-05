@@ -62,6 +62,13 @@ const OtpInput: React.FC<Props> = ({
         if (nativeEvent?.key === 'Backspace') {
           removeTextHandler(index);
         }
+        else if(!isNaN(parseInt(nativeEvent.key))){
+          let newOtp = [...forgotPasswordOtp];
+          if(newOtp[index].trim().length){
+            newOtp[index] = '';
+            handleChangeText(nativeEvent.key,index)
+          }
+       }
       },
       ref: (input: any) => {
         if (index === focusedInput && input) {
@@ -73,12 +80,10 @@ const OtpInput: React.FC<Props> = ({
   const removeTextHandler = (index: any) => {
     let newOtp = [...forgotPasswordOtp];
     if (index === 0) {
-      console.log('1>>>>>>>>>>>>>>>>')
       newOtp[index] = '';
       SetForgotPasswordOtp(newOtp);
       SetFocusInput(0);
     } else if (index >= totalField - 1 && newOtp[totalField - 1] !== '') {
-      console.log('2?>>>>>>>>>>>>>>>>>.')
       newOtp[index] = '';
       SetForgotPasswordOtp(newOtp);
       SetFocusInput(totalField - 1);
@@ -99,6 +104,7 @@ const OtpInput: React.FC<Props> = ({
     }
   };
   const handleChangeText = (text: any, index: any) => {
+    if(!isNaN(text) && text.trim().length !== 0){
     const newOtp = [...forgotPasswordOtp];
     newOtp[index] = text;
     SetForgotPasswordOtp(newOtp);
@@ -106,7 +112,7 @@ const OtpInput: React.FC<Props> = ({
     if (text && index < forgotPasswordOtp.length - 1) {
       const nextInput = index + 1;
       SetFocusInput(nextInput);
-    }
+    }}
   };
   return (
     <View style={style}>
@@ -131,6 +137,9 @@ const OtpInput: React.FC<Props> = ({
             maxLength={1}
             textAlign={'center'}
             testID="otpDataTestId"
+            onFocus={()=>{
+              SetFocusInput(index)
+            }}
           />
         </View>
       ))}
